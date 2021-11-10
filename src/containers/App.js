@@ -5,6 +5,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Signup from './Signup';
 
 import Login from './Login';
+import Restaurants from '../components/Restaurants';
 // import NavBar from '../components/NavBar';
 
 // import Home from '../components/Home';
@@ -22,6 +23,7 @@ function App() {
             <div className="col-9">
               <Route exact path="/Signup" component={Signup} />
               <Route exact path="/Login" component={Login} />
+              <Route exact path="/restaurants" component={Restaurants} />
 
               {/* <Route exact path="/" component={Home} /> */}
 
