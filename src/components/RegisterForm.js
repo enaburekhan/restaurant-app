@@ -75,7 +75,6 @@ const RegisterForm = ({ access, endpoint }) => {
             />
           </label>
         </div>
-        
 
         <div className="form-group create">
           <button
