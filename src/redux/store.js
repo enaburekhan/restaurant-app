@@ -10,13 +10,12 @@ import {
 } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import userReducer from './userSlice';
-import typeReducer from './typeSlice';
 import restaurantsReducer from './restaurantsSlice';
 
 const reducers = combineReducers({
   restaurants: restaurantsReducer,
   user: userReducer,
-  type: typeReducer,
+
 });
 
 const persistConfig = {

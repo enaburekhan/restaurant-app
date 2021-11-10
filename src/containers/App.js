@@ -6,7 +6,7 @@ import Signup from './Signup';
 
 import Login from './Login';
 import Restaurants from '../components/Restaurants';
-// import NavBar from '../components/NavBar';
+import NavBar from '../components/NavBar';
 
 // import Home from '../components/Home';
 
@@ -17,7 +17,7 @@ function App() {
       <div className="row">
         <Router>
           <div className="col-3">
-            {/* <NavBar /> */}
+            <NavBar />
           </div>
           <Switch>
             <div className="col-9">

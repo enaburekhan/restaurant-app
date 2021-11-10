@@ -1,17 +1,7 @@
-// import { useEffect } from 'react';
 import { useSelector } from 'react-redux';
-import LoginForm from '../components/RegisterForm';
-// import { changeType } from '../redux/typeSlice';
+import LoginForm from '../components/LoginForm';
 
 const Login = () => {
-  // const dispatch = useDispatch();
-  // const access = 'Login';
-  // const token = localStorage.setItem('token');
-
-  // useEffect(() => {
-  //   dispatch(changeType(access));
-  // }, []);
-
   const { error } = useSelector((state) => state.user);
 
   return (
