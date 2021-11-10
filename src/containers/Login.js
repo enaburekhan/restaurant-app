@@ -1,16 +1,16 @@
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import RegisterForm from '../components/RegisterForm';
-import { changeType } from '../redux/typeSlice';
+// import { useEffect } from 'react';
+import { useSelector } from 'react-redux';
+import LoginForm from '../components/RegisterForm';
+// import { changeType } from '../redux/typeSlice';
 
 const Login = () => {
-  const dispatch = useDispatch();
-  const access = 'Login';
+  // const dispatch = useDispatch();
+  // const access = 'Login';
   // const token = localStorage.setItem('token');
 
-  useEffect(() => {
-    dispatch(changeType(access));
-  }, []);
+  // useEffect(() => {
+  //   dispatch(changeType(access));
+  // }, []);
 
   const { error } = useSelector((state) => state.user);
 
@@ -21,11 +21,11 @@ const Login = () => {
           <div>
             <div className="login-error">{error}</div>
             <br />
-            <RegisterForm access={access} endpoint="authentications" />
+            <LoginForm endpoint="authentications" />
           </div>
         )
         : (
-          <RegisterForm access={access} endpoint="authentications" />
+          <LoginForm endpoint="authentications" />
         )}
     </>
   );

@@ -1,16 +1,15 @@
-import { useState, useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { Link, useHistory } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { userAuth } from '../redux/userSlice';
 import Loading from './Loading';
 
-const RegisterForm = ({ endpoint }) => {
+const LoginForm = ({ endpoint }) => {
   const history = useHistory();
   const dispatch = useDispatch();
   const user = useSelector((state) => state.user);
   const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const token = localStorage.getItem('token');
 
@@ -23,7 +22,7 @@ const RegisterForm = ({ endpoint }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     dispatch(userAuth({
-      username, email, password, endpoint,
+      username, password, endpoint,
     }));
   };
   if (user.loading) {
@@ -49,19 +48,6 @@ const RegisterForm = ({ endpoint }) => {
           </label>
         </div>
         <div className="form-group create">
-          <label htmlFor="email" className="control-label">
-            Email
-            <input
-              type="text"
-              name="email"
-              id="email"
-              required
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-          </label>
-        </div>
-        <div className="form-group create">
           <label htmlFor="password" className="control-label">
             Password
             <input
@@ -81,23 +67,22 @@ const RegisterForm = ({ endpoint }) => {
             type="submit"
             className="btn btn-primary btn-lg"
           >
-            Signup
+            Login
           </button>
         </div>
       </form>
-
       <p className="text-center">
-        Do you already have an account?
+        Do you need to create an account?
         {' '}
-        <Link to="/Login">Login</Link>
+        <Link to="/Signup">Signup</Link>
       </p>
     </>
   );
 };
 
-export default RegisterForm;
+export default LoginForm;
 
-RegisterForm.propTypes = {
-  // access: PropTypes.string.isRequired,
+LoginForm.propTypes = {
+//   access: PropTypes.string.isRequired,
   endpoint: PropTypes.string.isRequired,
 };
