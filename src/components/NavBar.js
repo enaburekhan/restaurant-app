@@ -19,6 +19,7 @@ const NavBar = () => {
             <div>
               <Link to="/restaurants" className="doc nav-link active">Restaurants</Link>
               <Link to="/collections" className="appoint-md nav-link">Collections</Link>
+              <Link to="/collections/new" className="appoint-md nav-link">NewCollections</Link>
               <Logout />
             </div>
           ) : (

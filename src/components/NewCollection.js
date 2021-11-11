@@ -69,6 +69,7 @@ const NewCollection = () => {
         value={collection.id}
       >
         {collection.name}
+        {collection.opening_date}
       </option>
     ))
   );

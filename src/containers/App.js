@@ -7,8 +7,7 @@ import Signup from './Signup';
 import Login from './Login';
 import Restaurants from '../components/Restaurants';
 import NavBar from '../components/NavBar';
-
-// import Home from '../components/Home';
+import NewCollection from '../components/NewCollection';
 
 function App() {
   return (
@@ -24,8 +23,7 @@ function App() {
               <Route exact path="/Signup" component={Signup} />
               <Route exact path="/Login" component={Login} />
               <Route exact path="/restaurants" component={Restaurants} />
-
-              {/* <Route exact path="/" component={Home} /> */}
+              <Route exact path="/collections/new" component={NewCollection} />
 
             </div>
           </Switch>
