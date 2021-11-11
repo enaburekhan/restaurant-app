@@ -98,6 +98,5 @@ const RegisterForm = ({ endpoint }) => {
 export default RegisterForm;
 
 RegisterForm.propTypes = {
-  // access: PropTypes.string.isRequired,
   endpoint: PropTypes.string.isRequired,
 };

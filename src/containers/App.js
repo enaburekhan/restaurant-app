@@ -26,8 +26,6 @@ function App() {
               <Route exact path="/restaurants" component={Restaurants} />
               <Route exact path="/collections/new" component={NewCollection} />
               <Route exact path="/collections" component={Collections} />
-              {/* <Route exact path="/collection/:id" component={Collection} /> */}
-
             </div>
           </Switch>
         </Router>

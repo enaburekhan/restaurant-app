@@ -21,10 +21,10 @@ const Restaurants = () => {
              || val.opening_date.toLowerCase().includes(searchData.toLowerCase()),
   )
     .map((restaurant) => (
-      <div className="card style=width: 18rem " key={restaurant.id}>
-        <div className="card-body col-3 listDoctors">
-          <p className="doctor-name">{restaurant.name}</p>
-          <p className="doctor-specialization">{restaurant.opening_date}</p>
+      <div className="card" key={restaurant.id}>
+        <div className="card-body col-3 listRestaurants">
+          <p>{restaurant.name}</p>
+          <p>{restaurant.opening_date}</p>
 
         </div>
       </div>
@@ -32,10 +32,10 @@ const Restaurants = () => {
 
   return (
     <div className="">
-      <h2>Restaurants</h2>
+      <h2 className="restaurants">Restaurants</h2>
       {loading && <span className="spinner-border spinner-border-lg" />}
-      <div style={{ margin: '0 auto', marginTop: '10%' }}>
-        <label htmlFor="search" className="control-label">
+      <div>
+        <label htmlFor="search" className="restaurants">
           Search:
           <input
             type="text"

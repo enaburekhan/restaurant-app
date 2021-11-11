@@ -105,23 +105,27 @@ body {
   cursor: pointer;
 }
 
-/* list doctors */
+/* list restaurants */
 
-.listDoctors {
+.listRestaurants {
   width: 55vw;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.listDoctors p,
-.listDoctors span {
+.listRestaurants p,
+.listRestaurants span {
   font-size: 18px;
   font-weight: bold;
+  width: 40vw;
 }
 
-.doctor-img {
-  max-width: 8vw;
+.restaurants {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
 }
 
 @media (max-width: 780px) {
@@ -131,10 +135,13 @@ body {
     margin-right: 40px;
   }
 
-  .listDoctors {
+  .listRestaurants {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
     margin: 50px;
+    
   }
 
   .doc,
@@ -151,12 +158,6 @@ body {
 
 .logout span {
   margin-right: 3px;
-}
-
-/* doctor */
-
-.single-doctor-img {
-  max-width: 20vw;
 }
 
 .loading,

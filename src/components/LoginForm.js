@@ -83,6 +83,5 @@ const LoginForm = ({ endpoint }) => {
 export default LoginForm;
 
 LoginForm.propTypes = {
-//   access: PropTypes.string.isRequired,
   endpoint: PropTypes.string.isRequired,
 };
