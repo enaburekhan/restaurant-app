@@ -11,9 +11,11 @@ import {
 import storage from 'redux-persist/lib/storage';
 import userReducer from './userSlice';
 import restaurantsReducer from './restaurantsSlice';
+import collectionsReducer from './collectionsSlice';
 
 const reducers = combineReducers({
   restaurants: restaurantsReducer,
+  collections: collectionsReducer,
   user: userReducer,
 
 });
