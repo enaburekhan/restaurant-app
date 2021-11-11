@@ -38,15 +38,16 @@ const Collections = () => {
       </div>
       {
       data && data.map((collection) => (
-
-        <div className="card m-4" key={collection.id}>
-          <div className="card-body">
-            <p>{collection.vegetarian_favorites}</p>
+        <Link to={`/collection/${collection.id}`} key={collection.id}>
+          <div className="card m-4">
+            <div className="card-body">
+              <p>{collection.vegetarian_favorites}</p>
+            </div>
+            <div className="card-body">
+              <p>{collection.meat_lovers}</p>
+            </div>
           </div>
-          <div className="card-body">
-            <p>{collection.meat_lovers}</p>
-          </div>
-        </div>
+        </Link>
 
       ))
   }
