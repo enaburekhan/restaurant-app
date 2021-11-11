@@ -11,7 +11,7 @@ const Logout = () => {
   const handleClick = () => {
     localStorage.removeItem('token');
     dispatch(logout());
-    history.push('/');
+    history.push('/Login');
   };
   return (
     <div className="logout">
