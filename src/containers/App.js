@@ -8,6 +8,7 @@ import Login from './Login';
 import Restaurants from '../components/Restaurants';
 import NavBar from '../components/NavBar';
 import NewCollection from '../components/NewCollection';
+import Collections from '../components/Collections';
 
 function App() {
   return (
@@ -24,6 +25,8 @@ function App() {
               <Route exact path="/Login" component={Login} />
               <Route exact path="/restaurants" component={Restaurants} />
               <Route exact path="/collections/new" component={NewCollection} />
+              <Route exact path="/collections" component={Collections} />
+              {/* <Route exact path="/collection/:id" component={Collection} /> */}
 
             </div>
           </Switch>

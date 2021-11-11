@@ -37,22 +37,18 @@ const Collections = () => {
         )}
       </div>
       {
-      data && data.map((appointment) => {
-        const d = new Date(appointment.appointment_date);
-        const date = d.toUTCString();
-        return (
-          <Link to={`/appointment/${appointment.id}`} key={appointment.id}>
-            <div className="card m-4">
-              <div className="card-body">
-                <p>
-                  On &nbsp;
-                  {date}
-                </p>
-              </div>
-            </div>
-          </Link>
-        );
-      })
+      data && data.map((collection) => (
+
+        <div className="card m-4" key={collection.id}>
+          <div className="card-body">
+            <p>{collection.vegetarian_favorites}</p>
+          </div>
+          <div className="card-body">
+            <p>{collection.meat_lovers}</p>
+          </div>
+        </div>
+
+      ))
   }
     </div>
 
