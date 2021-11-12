@@ -8,7 +8,7 @@ export const postCollections = createAsyncThunk(
   'collections/postCollections',
   async (
     {
-      vegetarian_favorites, meat_lovers, user_id,
+      restaurant_type, user_id,
     },
   ) => {
     const token = localStorage.getItem('token');
@@ -21,8 +21,7 @@ export const postCollections = createAsyncThunk(
       },
 
       body: JSON.stringify({
-        vegetarian_favorites,
-        meat_lovers,
+        restaurant_type,
         user_id,
       }),
     });

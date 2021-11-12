@@ -6,7 +6,7 @@ import { postCollections } from '../redux/collectionsSlice';
 
 const NewCollection = () => {
   const [vegetarianFavorites, setVegetarianFavorites] = useState('');
-  const [meatLovers, setMeatLovers] = useState('');
+  // const [meatLovers, setMeatLovers] = useState('');
   const [userId, setUserId] = useState('');
   const [successful, setSuccessful] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -19,10 +19,10 @@ const NewCollection = () => {
     setVegetarianFavorites(vegetarianFavorites);
   };
 
-  const onChangeMeatLovers = (e) => {
-    const meatLovers = e.target.value;
-    setMeatLovers(meatLovers);
-  };
+  // const onChangeMeatLovers = (e) => {
+  //   const meatLovers = e.target.value;
+  //   setMeatLovers(meatLovers);
+  // };
 
   const onChangeUserId = (e) => {
     const userId = e.target.value;
@@ -30,14 +30,12 @@ const NewCollection = () => {
   };
 
   const vegetarian_favorites = vegetarianFavorites;
-  const meat_lovers = meatLovers;
+  // const meat_lovers = meatLovers;
   const user_id = userId;
 
   if (!userData) {
     return <Redirect to="/Login" />;
   }
-
-  //   const { user_id } = userData;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -46,7 +44,7 @@ const NewCollection = () => {
     // eslint-disable-next-line no-underscore-dangle
 
     dispatch(postCollections({
-      vegetarian_favorites, meat_lovers, user_id,
+      vegetarian_favorites, user_id,
     }))
       .then(() => {
         setSuccessful(true);
@@ -98,7 +96,7 @@ const NewCollection = () => {
                 />
               </label>
             </div>
-            <div className="form-group create">
+            {/* <div className="form-group create">
               <label htmlFor="meatLovers" className="control-label">
                 Meat Lovers
                 <input
@@ -111,7 +109,7 @@ const NewCollection = () => {
                   onChange={onChangeMeatLovers}
                 />
               </label>
-            </div>
+            </div> */}
             <div className="form-group create">
               <label htmlFor="userId">
                 Select from list:
