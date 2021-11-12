@@ -18,7 +18,7 @@ test('postCollections.pending', () => {
 });
 
 test('postCollections.fulfilled', () => {
-  const mockAsyncPayload = { collections: { vegetarianFavorites: 'The purple joint', meatLovers: 'salsa red meat' } };
+  const mockAsyncPayload = { collections: { restaurantType: 'The purple joint', userId: 1 } };
   const nextState = collectionsReducer(initialState, postCollections.fulfilled(mockAsyncPayload));
   expect(nextState.loading).toBe(false);
 });
@@ -39,7 +39,7 @@ test('getCollections.pending', () => {
 });
 
 test('getCollections.fulfilled', () => {
-  const mockAsyncPayload = { collections: { vegetarianFavorites: 'The purple joint', meatLovers: 'salsa red meat' } };
+  const mockAsyncPayload = { collections: { restaurantType: 'The purple joint', userId: 1 } };
   const nextState = collectionsReducer(initialState, getCollections.fulfilled(mockAsyncPayload));
   expect(nextState.data).toBe(mockAsyncPayload);
   expect(nextState.loading).toBe(false);
