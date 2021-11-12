@@ -32,4 +32,3 @@ test('getRestaurants.rejected', () => {
   expect(nextState.error).toBe(mockAsyncPayloadError);
   expect(nextState.loading).toBe(false);
 });
-

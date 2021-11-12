@@ -42,12 +42,7 @@ const Collections = () => {
         <div className="card m-4" key={collection.id}>
           <div className="card-body d-flex justify-content-center align-items-center">
             <p>
-              {collection.vegetarian_favorites}
-            </p>
-          </div>
-          <div className="card-body">
-            <p className="">
-              {collection.meat_lovers}
+              {collection.restaurant_type}
             </p>
           </div>
         </div>

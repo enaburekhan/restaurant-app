@@ -5,8 +5,7 @@ import { Redirect } from 'react-router-dom';
 import { postCollections } from '../redux/collectionsSlice';
 
 const NewCollection = () => {
-  const [vegetarianFavorites, setVegetarianFavorites] = useState('');
-  // const [meatLovers, setMeatLovers] = useState('');
+  const [restaurantType, setRestaurantType] = useState('');
   const [userId, setUserId] = useState('');
   const [successful, setSuccessful] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -14,24 +13,18 @@ const NewCollection = () => {
   const dispatch = useDispatch();
   const { data, error } = useSelector((state) => state.restaurants);
 
-  const onChangeVegatarianFavorites = (e) => {
-    const vegetarianFavorites = e.target.value;
-    setVegetarianFavorites(vegetarianFavorites);
-  };
-
-  // const onChangeMeatLovers = (e) => {
-  //   const meatLovers = e.target.value;
-  //   setMeatLovers(meatLovers);
-  // };
-
   const onChangeUserId = (e) => {
     const userId = e.target.value;
     setUserId(userId);
   };
 
-  const vegetarian_favorites = vegetarianFavorites;
-  // const meat_lovers = meatLovers;
+  const onChangeRestaurantType = (e) => {
+    const restaurantType = e.target.value;
+    setRestaurantType(restaurantType);
+  };
+
   const user_id = userId;
+  const restaurant_type = restaurantType;
 
   if (!userData) {
     return <Redirect to="/Login" />;
@@ -44,11 +37,11 @@ const NewCollection = () => {
     // eslint-disable-next-line no-underscore-dangle
 
     dispatch(postCollections({
-      vegetarian_favorites, user_id,
+      user_id, restaurant_type,
     }))
       .then(() => {
         setSuccessful(true);
-        alert.show('Collection created', {
+        alert.show('Restaurant created', {
           type: 'success',
           timeout: 2000,
         });
@@ -61,13 +54,12 @@ const NewCollection = () => {
   };
 
   const options = data && (
-    data.map((collection) => (
+    data.map((restaurant) => (
       <option
-        key={collection.id}
-        value={collection.id}
+        key={restaurant.id}
+        value={restaurant.id}
       >
-        {collection.name}
-        {collection.opening_date}
+        {restaurant.name}
       </option>
     ))
   );
@@ -83,35 +75,21 @@ const NewCollection = () => {
           { !successful && (
           <div>
             <div className="form-group create">
-              <label htmlFor="vegetarianFavorites" className="control-label">
-                Vegetarian Favorites
+              <label htmlFor="restaurantType" className="control-label">
+                Restaurant Type
                 <input
                   type="text"
                   className="form-control"
-                  name="VegatarianFavorites"
-                  id="vegetarianFavorites"
+                  name="restaurantType"
+                  id="restaurantType"
                   required
-                  value={vegetarianFavorites}
-                  onChange={onChangeVegatarianFavorites}
+                  value={restaurantType}
+                  onChange={onChangeRestaurantType}
                 />
               </label>
             </div>
-            {/* <div className="form-group create">
-              <label htmlFor="meatLovers" className="control-label">
-                Meat Lovers
-                <input
-                  type="text"
-                  className="form-control"
-                  name="meatLovers"
-                  id="meatLovers"
-                  required
-                  value={meatLovers}
-                  onChange={onChangeMeatLovers}
-                />
-              </label>
-            </div> */}
             <div className="form-group create">
-              <label htmlFor="userId">
+              <label htmlFor="restaurantId">
                 Select from list:
                 <select
                   value={userId}
@@ -127,7 +105,7 @@ const NewCollection = () => {
                 {loading && (
                 <span className="spinner-border spinner-border-sm" />
                 )}
-                <span>Create</span>
+                <span>Add</span>
               </button>
             </div>
           </div>
