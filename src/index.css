@@ -33,10 +33,14 @@ body {
   color: rgb(15, 15, 15);
 }
 
-.doc {
+.doc:hover {
   background-color: #92bc0e;
   color: #fff;
-  width: 12vw;
+  width: 10vw;
+}
+
+.username {
+  font-weight: bold;
 }
 
 .nav-footer {
