@@ -9,7 +9,7 @@ restaurant-app is a simple user-facing webapp that allows the user to filter for
 
  
  ### Live Demo:
-[restaurants-app]()
+[restaurants-app](https://glints-restaurants.netlify.app)
 
 
 ## Built-With
