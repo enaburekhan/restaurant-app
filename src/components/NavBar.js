@@ -18,8 +18,9 @@ const NavBar = () => {
           {token ? (
             <div>
               <Link to="/restaurants" className="doc nav-link active">Restaurants</Link>
-              <Link to="/collections" className="doc appoint-md nav-link">Collections</Link>
               <Link to="/collections/new" className="doc appoint-md nav-link">NewCollections</Link>
+              <Link to="/collections" className="doc appoint-md nav-link">Collections</Link>
+
               <Logout />
             </div>
           ) : (
